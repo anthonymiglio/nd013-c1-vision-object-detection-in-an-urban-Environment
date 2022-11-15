@@ -31,8 +31,7 @@ sudo firefox --no-sandbox
 ### Exploratory Data Analysis (EDA)
 Data from Waymo is already present in ``/home/workspace/data/`` directory to explore the dataset.
 - Implement the display_images function in the Exploratory Data Analysis notebook.
-
-From the dataset, some random images with bounding boxes for the class labels of vehicle, pedestrian, cycles.
+- From the dataset, some random images with bounding boxes for the class labels of vehicle, pedestrian, cycles.
 
 | img 01                       | img 02                       | img 03                       | img 04                       | img 05                       |
 |:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|:----------------------------:|
