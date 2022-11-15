@@ -45,29 +45,27 @@ From the dataset, some random images with bounding boxes for the class labels of
 <img src="/img/EDA_02.png"/>
 
 
-### Cross-validation
+## Cross-validation
 A usual approach is to separate the dataset into 75% for Training, 15% for Validation and 10% for Testing since the Waymo open dataset used here has a good combination of a small number of classes in a wide variety of light and weather conditions. The Data of this project came split like this: Training with 86 images, Evaluation with 10 images, and Test with 3 images.
 
 
-### Training
-A **reference experiment** with a default "pipeline.config" with no extra data augmentation had a transfer learning using the SSD_ResNet50 model. Then, to improve the performance, one way is to improve the reference experiment by editing the pipeline_new.config in its experiment folder, then training for a new outcome:
+## Training
+A **reference experiment** with a default "pipeline.config" with no extra data augmentation had a transfer learning using the SSD_ResNet50 model. Then, to improve the performance, one way is to improve the reference experiment by editing the ``pipeline_new.config`` in its experiment folder, then training for a new outcome:
 
-#### **Reference Experiment**: 
+### **Reference Experiment**: 
 Config file on folder ```./experiments/reference```
 
-- Momentum Optimizer:  cosine_decay_learning_rate
-
+- Momentum Optimizer:  ``cosine_decay_learning_rate``
 - Data Augmentation Options: No extra augmentation
 
 <img src="/img/tensorboard_01.png"/>
 <img src="/img/tensorboard_02.png"/>
 
 
-#### **Experiment 0**: 
+### **Experiment 0**: 
 config file on folder ```./experiments/experiment0```
 
-- Momentum Optimizer:  exponential_decay_learning_rate
-
+- Momentum Optimizer:  ``exponential_decay_learning_rate``
 - Data Augmentation Options: No extra augmentation
 
 <img src="/img/tensorboard_experiment0_01.png"/>
@@ -80,14 +78,13 @@ Overall, the training results from experiment0, in comparison with the reference
 Both models run for a little over 2.4k epochs until the learning rate decays to zero. But if compared, Total Loss experiment0 has reached 0.7, while the reference experiment kept at 10, proving that the Momentum Optimizer exponential_decay_learning_rate has outperformed cosine_decay_learning_rate.
 
 
-#### **Experiment 1**: 
+### **Experiment 1**: 
 Config file on folder ```./experiments/experiment1```
 
-- Momentum Optimizer:  cosine_decay_learning_rate
-
+- Momentum Optimizer:  ``cosine_decay_learning_rate``
 - Data Augmentation Options:
-1. Random RGB to GRAYSCALE conversion with a probability of 30%.
-2. Random Brightness Adjustment of Max difference of 30%.
+    1. Random RGB to GRAYSCALE conversion with a probability of 30%.
+    2. Random Brightness Adjustment of Max difference of 30%.
 
 <img src="/img/tensorboard_experiment1_01.png"/>
 <img src="/img/tensorboard_experiment1_02.png"/>
@@ -102,15 +99,14 @@ Overall, the training results from experiment1, compared to the reference experi
 | <img src="/img/img_augment_exp1_01.png"/> | <img src="/img/img_augment_exp1_02.png"/> |
 
 
-#### **Experiment 2**: 
+### **Experiment 2**: 
 Config file on folder ```./experiments/experiment2``` 
 
-- Momentum Optimizer:  exponential_decay_learning_rate
-
+- Momentum Optimizer:  ``exponential_decay_learning_rate``
 - Data Augmentation Options:
-1. Random RGB to GRAYSCALE conversion with a probability of 30%.
-2. Random Brightness Adjustment of Max difference of 30%.
-3. Random Black Square Patches, max 10 per image, with a probability of 50% and a Size to Image Ratio of 5%.
+    1. Random RGB to GRAYSCALE conversion with a probability of 30%.
+    2. Random Brightness Adjustment of Max difference of 30%.
+    3. Random Black Square Patches, max 10 per image, with a probability of 50% and a Size to Image Ratio of 5%.
 
 <img src="/img/tensorboard_experiment2_01.png"/>
 <img src="/img/tensorboard_experiment2_02.png"/>
