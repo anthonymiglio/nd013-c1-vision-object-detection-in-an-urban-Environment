@@ -54,8 +54,10 @@ A **reference experiment** with a default "pipeline.config" with no extra data a
 
 #### **Reference Experiment**: 
 config file on folder ```./experiments/reference```
-Momentum Optimizer:  cosine_decay_learning_rate
-Data Augmentation Options: No extra augmentation
+
+- Momentum Optimizer:  cosine_decay_learning_rate
+
+- Data Augmentation Options: No extra augmentation
 
 <img src="/img/tensorboard_01.png"/>
 <img src="/img/tensorboard_02.png"/>
@@ -63,8 +65,10 @@ Data Augmentation Options: No extra augmentation
 
 #### **Experiment 0**: 
 config file on folder ```./experiments/experiment0```
+
 Momentum Optimizer:  exponential_decay_learning_rate
-Data Augmentation Options: No extra augmentation
+
+- Data Augmentation Options: No extra augmentation
 
 <img src="/img/tensorboard_experiment0_01.png"/>
 <img src="/img/tensorboard_experiment0_02.png"/>
@@ -76,10 +80,12 @@ Both models run for a little over 2.4k epochs until the learning rate decays to 
 
 #### **Experiment 1**: 
 config file on folder ```./experiments/experiment1```
+
 Momentum Optimizer:  cosine_decay_learning_rate
+
 Data Augmentation Options:
-Random RGB to GRAYSCALE conversion with a probability of 30%.
-Random Brightness Adjustment of Max difference of 30%.
+- Random RGB to GRAYSCALE conversion with a probability of 30%.
+- Random Brightness Adjustment of Max difference of 30%.
 
 <img src="/img/tensorboard_experiment1_01.png"/>
 <img src="/img/tensorboard_experiment1_02.png"/>
@@ -94,11 +100,13 @@ Overall, the training results from experiment1, compared to the reference experi
 
 #### **Experiment 2**: 
 config file on folder ```./experiments/experiment2``` 
+
 Momentum Optimizer:  exponential_decay_learning_rate
+
 Data Augmentation Options:
-Random RGB to GRAYSCALE conversion with a probability of 30%.
-Random Brightness Adjustment of Max difference of 30%.
-Random Black Square Patches, max 10 per image, with a probability of 50% and a Size to Image Ratio of 5%.
+- Random RGB to GRAYSCALE conversion with a probability of 30%.
+- Random Brightness Adjustment of Max difference of 30%.
+- Random Black Square Patches, max 10 per image, with a probability of 50% and a Size to Image Ratio of 5%.
 
 <img src="/img/tensorboard_experiment2_01.png"/>
 <img src="/img/tensorboard_experiment2_02.png"/>
